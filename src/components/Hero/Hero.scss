@@ -1,0 +1,235 @@
+.bounce {}
+
+@keyframes bounce {
+    10% {
+        transform: translateY(0%);
+    }
+
+    20% {
+        transform: translateY(-25%);
+    }
+
+    30% {
+        transform: translateY(0%);
+    }
+
+    40% {
+        transform: translateY(-10%);
+    }
+
+    60% {
+        transform: translateY(0%);
+    }
+
+    80% {
+        transform: translateY(-5%);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        width: 28.125rem;
+        height: 28.125rem;
+        border-radius: 28.125rem;
+        background-color: #7c66e3;
+        position: absolute;
+        z-index: -1;
+        filter: blur(200px);
+    }
+
+    &::after {
+        top: -3rem;
+        left: -5rem;
+    }
+
+    &::before {
+        bottom: 2rem;
+        right: 0;
+    }
+
+    .hero__content {
+        flex: 1;
+
+        h2 {
+            font-size: 3.8rem;
+            font-weight: 600;
+            line-height: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            width: 80%;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 2rem;
+        }
+    }
+
+    .hero__img {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 5rem;
+
+        >div {
+            display: flex;
+            align-items: flex-end;
+            gap: 2rem;
+
+            img {
+                width: 30rem;
+                transition: var(--transition);
+                border-radius: 30px;
+                box-shadow:  10px 10px 20px #ffffff25, -10px -10px 20px #7e61e73d;
+
+                &:hover {
+                    transform: translateY(-0.4rem);
+                }
+            }
+
+            .tech__icon {
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                border-radius: 0.65rem;
+                border: 1.5px solid #6852ba;
+                // background: #000;
+                animation: bounce 10s ease-in-out infinite;
+
+                img {
+                    width: 4rem;
+                    height: auto;
+                    transition: var(--transition);
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .hero__container {
+        .hero__content {
+            h2 {
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                line-height: 1.6rem;
+            }
+        }
+
+        .hero__img {
+            >div {
+                img {
+                    width: 20rem;
+                }
+            }
+
+            >div {
+                .tech__icon {
+                    width: 4rem;
+                    height: 4rem;
+
+                    img {
+                        width: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991px) {
+    .hero__container {
+        flex-direction: column;
+
+        &::after,
+        &::before {
+            content: "";
+            width: 18rem;
+            height: 18rem;
+        }
+
+        &::after {
+            top: 0;
+            left: 0;
+        }
+
+        &::before {
+            bottom: 2rem;
+            right: 0;
+        }
+
+        h2 {
+            margin-top: 3rem;
+        }
+
+        .hero__img {
+            margin: 2rem 2rem 0;
+        }
+
+        .hero__content {
+
+            h2,
+            p {
+                width: auto;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .hero__container {
+        .hero__content {
+            h2 {
+                font-size: 2.2rem;
+                line-height: 3rem;
+            }
+            p {
+                font-size: 0.8rem;
+                line-height: 1.3rem;
+            }
+        }
+
+        .hero__img {
+            gap: 1rem;
+
+            > div {
+                gap: 1rem;
+
+                img {
+                    width: 16rem;
+                }
+                .tech__icon {
+                    width: 3.3rem;
+                    height: 3.3rem;
+
+                    img {
+                        width: 2rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

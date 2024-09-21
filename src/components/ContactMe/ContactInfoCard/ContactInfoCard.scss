@@ -1,0 +1,33 @@
+.contact__details__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #130f2a;
+    border-radius: .65rem;
+    border: 1.5px solid #6751b9;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    .icon {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: .5rem;
+        background: #3d3072;
+        margin-bottom: 0.8rem;
+
+        img {
+            width: 3.5rem;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    p {
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+}
